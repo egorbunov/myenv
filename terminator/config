@@ -2,6 +2,8 @@
   always_split_with_profile = True
   focus = system
   title_transmit_bg_color = "#d30102"
+  use_system_font = False
+  font = Fira Mono 12
 [keybindings]
 [layouts]
   [[default]]

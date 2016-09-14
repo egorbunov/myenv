@@ -153,6 +153,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        position top
 }
 
 # sound
@@ -163,3 +164,7 @@ bindsym XF86AudioMute exec amixer -q set Master toggle
 # kb
 # Switch layout: left alt+left shift, caps as additional ctrl, alt as compose
 exec --no-startup-id setxkbmap us,ru '' compose:ralt ctrl:nocaps grp:lalt_lshift_toggle &
+
+# wall
+exec --no-startup-id feh --bg-scale /home/eg/Pictures/walls/pole-vecher-tuchi-svet.jpg
+
