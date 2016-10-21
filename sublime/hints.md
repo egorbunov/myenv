@@ -12,6 +12,12 @@
 * TodoReview
 * JsonTree
 
+
+## Themes
+
+* Agila (with monokai theme)
+* Soda Seti
+
 ## Shortcuts 
 ```
 [
