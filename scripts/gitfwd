@@ -1,0 +1,16 @@
+#! /bin/bash
+
+nextCommit=$(git rev-list master ^HEAD | tail -1)
+
+if [ -z "$nextCommit" ]; then
+	echo "No commit to forward to: HEAD points to top of the master"
+	exit 0
+fi
+
+masterCommit=$(git rev-parse master)
+if [ "$nextCommit" = "$masterCommit" ]; then
+	nextCommit="master"
+fi
+
+git checkout $nextCommit
+
