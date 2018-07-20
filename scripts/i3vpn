@@ -1,0 +1,11 @@
+#!/bin/bash
+
+VPN_NAME=$(nmcli -t -f TYPE,STATE,NAME connection show | grep "vpn:activated" | sed 's/vpn:activated://')
+
+if [ x$VPN_NAME == x ]; then
+    STATE="<span color='#FF6600'>🔓 no vpn</span>"
+else
+    STATE="<span color='#00FF00'>🔒 $VPN_NAME</span>"
+fi
+
+echo $STATE

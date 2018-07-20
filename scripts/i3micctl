@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# see i3blocks/config for signal settings
+newmicstatus="pkill -RTMIN+12 i3blocks"
+
+cmd=${1:-status}
+
+case "$cmd" in
+"status")
+    pactl list sources | grep -q "Mute: yes" && state="<span color='#FF0000'>🎤 mute</span>"
+    if [ x$state == x ]; then
+        state="🎤"
+    fi
+    echo $state
+;;
+"toggle")
+    pactl set-source-mute 1 toggle && $newmicstatus && echo OK
+;;
+*)
+    echo UNKNOWN_COMMAND
+;;
+esac
+
