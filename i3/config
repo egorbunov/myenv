@@ -38,6 +38,9 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
+bindsym $mod+Next workspace next
+bindsym $mod+Prior workspace prev
+
 # move focused window
 bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
@@ -153,9 +156,12 @@ bar {
 
 # ======================= MY STUFF ================================
 
+# scrolling
+exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelta=-40
+
+
 # lang
-exec "setxkbmap -layout us,ru"
-exec "setxkbmap -option 'grp:win_space_toggle'"
+exec --no-startup-id setxkbmap -layout us,ru -option 'grp:win_space_toggle'
 
 # wallpaper
 exec --no-startup-id feh --bg-scale ~/Pictures/walls/stormy.jpg
